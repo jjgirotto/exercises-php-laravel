@@ -3,21 +3,29 @@
 @section('conteudo')
 <form method="post" action="/ex1resp">
     @csrf
-    <div class="mb-3">
-        <label for="valor1" class="form-label">Valor 1:</label>
-        <input type="number" id="valor1" name="valor1" class="form-control" required="">
+    <div class="row mt-3">
+        <div class="col mb-3">
+            <label for="valor1" class="form-label fw-bold">Informe a nota 1:</label>
+            <input type="number" id="valor1" name="valor1" class="form-control" step="0.01" required="">
+        </div>
+        <div class="col mb-3">
+            <label for="valor2" class="form-label fw-bold">Informe a nota 2:</label>
+            <input type="number" id="valor2" name="valor2" class="form-control" step="0.01" required="">
+        </div>
+        <div class="col mb-3">
+            <label for="valor3" class="form-label fw-bold">Informe a nota 3:</label>
+            <input type="number" id="valor3" name="valor3" class="form-control" step="0.01" required="">
+        </div>
     </div>
-
-    <div class="mb-3">
-        <label for="valor2" class="form-label">Valor 2:</label>
-        <input type="number" id="valor2" name="valor2" class="form-control" required="">
+    <div class="row">
+        <div class="col mb-3">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
     </div>
-
-    <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
 
-    @isset($soma)
-        <p>O valor da soma é: {{ $soma }}</p>
+    @isset($media)
+        <p class="fw-bold">O valor da média é: {{ $media }}</p>
     @endisset
 
 @endsection
