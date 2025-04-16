@@ -15,6 +15,10 @@ class AuthController extends Controller
         $credenciais = $request->only('email', 'password');
         if (Auth::attempt($credenciais)) {
             $request->session()->regenerate();
+            $user = Auth::user();
+            if ($user->role == 'ADM') {
+                return redirect()->intended('/home-adm');
+            } else return redirect()->intended('home-cli');
             return redirect()->intended('/produtos');
         }
         return back()->withErrors([

@@ -8,13 +8,6 @@
   </head>
   <body class="container">
   
-  <p>Usuário: {{ Auth::user()->name }}</p>
-
-  <form action="/logout" method="post">
-    @csrf
-    <button type="submit" class="btn btn-danger">Sair</button>
-  </form>
-  
   <h1>Produtos</h1>
 
     <a class="btn btn-primary" href="/produtos/create">Novo Produto</a>
