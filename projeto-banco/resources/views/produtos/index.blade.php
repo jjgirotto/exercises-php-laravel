@@ -7,7 +7,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body class="container">
-    <h1>Produtos</h1>
+  
+  <p>Usuário: {{ Auth::user()->name }}</p>
+
+  <form action="/logout" method="post">
+    @csrf
+    <button type="submit" class="btn btn-danger">Sair</button>
+  </form>
+  
+  <h1>Produtos</h1>
 
     <a class="btn btn-primary" href="/produtos/create">Novo Produto</a>
     @if (session('erro'))
