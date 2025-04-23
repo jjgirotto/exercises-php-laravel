@@ -25,14 +25,17 @@
     <table class="table table-hover table-striped">
         <thead>
             <tr>
+                <th>Foto</th>
                 <th>ID</th>
-                <th>Nome do Produto</th><th>Nome da Categoria</th>
+                <th>Nome do Produto</th>
+                <th>Nome da Categoria</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($produtos as $p)
                 <tr>
+                    <td><img src="{{  asset('storage/'.$p->foto) }}" height="50"/></td>
                     <td>{{ $p->id }}</td>
                     <td>{{ $p->nome }}</td>
                     <td>{{ $p->categoria->nome }}</td>

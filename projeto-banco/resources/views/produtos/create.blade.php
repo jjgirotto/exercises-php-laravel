@@ -10,7 +10,7 @@
 
     <h1>Novo Produto</h1>
     
-    <form method="post" action="/produtos">
+    <form method="post" action="/produtos" enctype="multipart/form-data">
         @csrf
                         
         <div class="mb-3">
@@ -42,6 +42,11 @@
                     </option>
                 @endforeach
             </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="foto" class="form-label">Foto do produto</label>
+            <input type="file" name="foto" id="foto" class="form-control">
         </div>
 
         <button type="submit" class="btn btn-primary">Enviar</button>
