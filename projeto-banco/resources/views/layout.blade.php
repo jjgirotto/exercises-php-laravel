@@ -21,7 +21,7 @@
             <a class="nav-link active" aria-current="page" href="#">Início</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Funcionalidade</a>
+            <a class="nav-link" href="/editar">Alterar meus dados</a>
           </li>
         </ul>
 
